@@ -12,4 +12,4 @@ type CarsController() =
 
     member x.Get() = repo.GetAll()
 
-    member x.Delete() = repo.Delete()
+    member x.Delete(id) = repo.Delete id

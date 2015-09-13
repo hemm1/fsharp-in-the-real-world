@@ -13,9 +13,9 @@ type CarsRepository() =
     let deleteRowsFrom (table:Table<_>) rows =
         table.DeleteAllOnSubmit(rows)
 
-    let delete = query {
+    let delete (id:int) = query {
                             for car in db.Car do
-                            where (car.Make = "Ferrari")
+                            where (car.Id = id)
                             select car
                         }
 
@@ -29,7 +29,7 @@ type CarsRepository() =
                 |> Seq.toList
                 |> List.map (fun c -> {Id = c.Id; Make = c.Make; Model = c.Model})
 
-    member x.Delete() =
-        delete |> deleteRowsFrom db.Car
+    member x.Delete id =
+        delete id |> deleteRowsFrom db.Car
         db.DataContext.SubmitChanges()
      
