@@ -12,12 +12,9 @@ $(function() {
 
 var del = function() {
     $.ajax({
-            url: uri,
-            type: 'DELETE'
-        })
-        .done(function(data) {
-            Console.log(data);
-        });
+        url: uri,
+        type: 'DELETE'
+    });
 };
 
 $("#deleteFerrari").click(function() {
