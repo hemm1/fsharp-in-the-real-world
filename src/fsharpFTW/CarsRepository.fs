@@ -21,6 +21,10 @@ type CarsRepository() =
                         }
                             |> Seq.head
 
+    let createNewCar car =  
+       let newCar = new SqlConnection.ServiceTypes.Car(Make = car.Make, Model = car.Model)
+       db.Car.InsertOnSubmit newCar
+
     member x.GetAll() = 
 
         query 
@@ -35,3 +39,7 @@ type CarsRepository() =
         selectRowWithId id |> deleteRowFromCar
         db.DataContext.SubmitChanges()
      
+     member x.Create car =
+        let newCar = createNewCar car
+        db.DataContext.SubmitChanges()
+        
