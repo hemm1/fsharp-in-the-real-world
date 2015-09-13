@@ -27,7 +27,7 @@ type CarsRepository() =
                 select car 
             } 
                 |> Seq.toList
-                |> List.map (fun c -> {Make = c.Make; Model = c.Model})
+                |> List.map (fun c -> {Id = c.Id; Make = c.Make; Model = c.Model})
 
     member x.Delete() =
         delete |> deleteRowsFrom db.Car
