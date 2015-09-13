@@ -22,8 +22,11 @@ type CarsRepository() =
                             |> Seq.head
 
     let createNewCar car =  
-       let newCar = new SqlConnection.ServiceTypes.Car(Make = car.Make, Model = car.Model)
-       db.Car.InsertOnSubmit newCar
+       new SqlConnection.ServiceTypes.Car(Make = car.Make, Model = car.Model)
+
+    let insertIntoCarTable car =
+       db.Car.InsertOnSubmit car |> ignore
+        
 
     member x.GetAll() = 
 
@@ -40,6 +43,6 @@ type CarsRepository() =
         db.DataContext.SubmitChanges()
      
      member x.Create car =
-        let newCar = createNewCar car
+        let ignore = createNewCar car |> insertIntoCarTable
         db.DataContext.SubmitChanges()
         
