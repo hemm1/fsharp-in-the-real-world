@@ -123,6 +123,8 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.js" />
+    <Content Include="CreateDatabase.sql" />
+    <Content Include="CreateTable.sql" />
     <None Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="fonts\glyphicons-halflings-regular.ttf" />
     <None Include="fonts\glyphicons-halflings-regular.svg" />

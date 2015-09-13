@@ -5,7 +5,7 @@ open System.Data.Linq
 open Microsoft.FSharp.Data.TypeProviders
 open fsharpFTW.Models
 
-type SqlConnection = Microsoft.FSharp.Data.TypeProviders.SqlDataConnection<ConnectionString = @"Data Source=.;database=faggruppe;Integrated Security=True">
+type SqlConnection = Microsoft.FSharp.Data.TypeProviders.SqlDataConnection<ConnectionString = @"Data Source=.;database=fsharpFTW;Integrated Security=True">
 
 type CarsRepository() =
     let db = SqlConnection.GetDataContext()

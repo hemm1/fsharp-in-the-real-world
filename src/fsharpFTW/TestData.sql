@@ -1,4 +1,6 @@
-﻿INSERT INTO Car (Make, Model)
+﻿use [fsharpFTW];
+
+INSERT INTO Car (Make, Model)
 	VALUES
 	('Ferrari', 'Testarossa'),
 	('Alfa Romeo', 'Giulietta'),
