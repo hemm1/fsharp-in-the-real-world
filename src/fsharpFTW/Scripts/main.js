@@ -14,7 +14,7 @@ var deleteCar = function(id) {
     $.ajax({
         url: uri + '/' + id,
         type: 'DELETE'
-    }).done(function(data) {
+    }).done(function() {
             location.reload();
         }
     );
