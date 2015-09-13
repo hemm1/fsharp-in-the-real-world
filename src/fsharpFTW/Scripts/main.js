@@ -1,11 +1,25 @@
-﻿$(function () {
-    var uri = 'api/cars';
+﻿var uri = 'api/cars';
 
+$(function() {
     $.getJSON(uri)
-        .done(function (data) {
-            $.each(data, function (key, item) {
+        .done(function(data) {
+            $.each(data, function(key, item) {
                 $('<tr><td>' + (key + 1) + '</td><td>' + item.make + '</td><td>' + item.model + '</td></tr>')
                     .appendTo($('#cars tbody'));
             });
         });
 });
+
+var del = function() {
+    $.ajax({
+            url: uri,
+            type: 'DELETE'
+        })
+        .done(function(data) {
+            Console.log(data);
+        });
+};
+
+$("#deleteFerrari").click(function() {
+    del();
+})

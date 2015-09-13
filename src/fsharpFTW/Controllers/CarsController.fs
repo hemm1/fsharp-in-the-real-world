@@ -11,3 +11,5 @@ type CarsController() =
     let repo = CarsRepository()
 
     member x.Get() = repo.GetAll()
+
+    member x.Delete() = repo.Delete()
