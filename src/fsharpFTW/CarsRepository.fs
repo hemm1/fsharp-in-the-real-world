@@ -11,7 +11,7 @@ type CarsRepository() =
     let db = SqlConnection.GetDataContext()
 
     let deleteRowFromCar row =
-        db.Car.DeleteOnSubmit(row)
+        db.Car.DeleteOnSubmit row
 
     let selectRowWithId (id:int) = 
                         query {
