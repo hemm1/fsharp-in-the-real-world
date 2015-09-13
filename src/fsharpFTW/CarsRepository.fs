@@ -10,14 +10,16 @@ type SqlConnection = Microsoft.FSharp.Data.TypeProviders.SqlDataConnection<Conne
 type CarsRepository() =
     let db = SqlConnection.GetDataContext()
 
-    let deleteRowsFrom (table:Table<_>) rows =
-        table.DeleteAllOnSubmit(rows)
+    let deleteRowFromCar row =
+        db.Car.DeleteOnSubmit(row)
 
-    let delete (id:int) = query {
+    let selectRowWithId (id:int) = 
+                        query {
                             for car in db.Car do
                             where (car.Id = id)
                             select car
                         }
+                            |> Seq.head
 
     member x.GetAll() = 
 
@@ -30,6 +32,6 @@ type CarsRepository() =
                 |> List.map (fun c -> {Id = c.Id; Make = c.Make; Model = c.Model})
 
     member x.Delete id =
-        delete id |> deleteRowsFrom db.Car
+        selectRowWithId id |> deleteRowFromCar
         db.DataContext.SubmitChanges()
      
