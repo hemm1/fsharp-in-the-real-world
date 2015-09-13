@@ -4,7 +4,6 @@ open System.Collections.Generic
 open System.Linq
 open System.Net.Http
 open System.Web.Http
-open fsharpFTW.Models
 
 type CarsController() =
     inherit ApiController()
