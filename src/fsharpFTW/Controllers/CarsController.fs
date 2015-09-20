@@ -6,10 +6,10 @@ open System.Net.Http
 open System.Web.Http
 open fsharpFTW.Models
 
-type CarsController() =
+type CarsController(repo : CarsRepository) =
     inherit ApiController()
 
-    let repo = CarsRepository()
+    new() = new CarsController(CarsRepository())
 
     member x.Get() = repo.GetAll()
 
