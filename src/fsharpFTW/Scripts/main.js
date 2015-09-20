@@ -20,7 +20,7 @@ var deleteCar = function(id) {
     );
 };
 
-var newCar = function (event) {
+var newCar = function(event) {
     event.preventDefault();
     var make = event.target.make.value;
     var model = event.target.model.value;
