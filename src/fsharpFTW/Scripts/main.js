@@ -19,3 +19,23 @@ var deleteCar = function(id) {
         }
     );
 };
+
+var newCar = function (event) {
+    event.preventDefault();
+    var make = event.target.make.value;
+    var model = event.target.model.value;
+
+    var data = { "Make": make, "Model": model };
+    $.ajax({
+        url: uri,
+        type: 'POST',
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify(data),
+        dataType: "json",
+    }).done(function() {
+            location.reload();
+        }
+    );
+}
+
+$("#newcar").submit(newCar);
