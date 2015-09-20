@@ -16,3 +16,6 @@ type CarsController() =
     member x.Delete id = repo.Delete id
 
     member x.Post (car:Car) = repo.Create car
+
+    member x.Put (id:int, car:Car) = 
+        System.Diagnostics.Debug.WriteLine ("PUT called with Id = " + id.ToString() + " Make = " + car.Make + " and Model = " + car.Model)
