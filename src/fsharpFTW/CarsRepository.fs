@@ -5,7 +5,7 @@ open System.Data.Linq
 open Microsoft.FSharp.Data.TypeProviders
 open fsharpFTW.Models
 
-type SqlConnection = Microsoft.FSharp.Data.TypeProviders.SqlDataConnection<ConnectionString = @"Data Source=.;database=fsharpFTW;Integrated Security=True">
+type SqlConnection = Microsoft.FSharp.Data.TypeProviders.SqlDataConnection<ConnectionString = @"Data Source=.=fsharpFTW;Integrated Security=True">
 
 type CarsRepository() =
     let db = SqlConnection.GetDataContext()
@@ -27,7 +27,18 @@ type CarsRepository() =
     let insertIntoCarTable car =
        db.Car.InsertOnSubmit car |> ignore
         
-
+    
+    let updateCar car =
+        query { for row in db.Car do
+                where (row.Id = car.Id)
+                select row
+                } 
+                |> Seq.iter (fun row ->
+            row.Make <- car.Make
+            row.Model <- car.Model
+            )
+           
+           
     member x.GetAll() = 
 
         query 
@@ -42,7 +53,10 @@ type CarsRepository() =
         selectRowWithId id |> deleteRowFromCar
         db.DataContext.SubmitChanges()
      
-     member x.Create car =
-        let ignore = createNewCar car |> insertIntoCarTable
+    member x.Create car =
+        createNewCar car |> insertIntoCarTable
         db.DataContext.SubmitChanges()
         
+    member x.Update car =
+        updateCar car       
+        db.DataContext.SubmitChanges()
