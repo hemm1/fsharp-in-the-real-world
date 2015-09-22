@@ -46,12 +46,12 @@ type CarsRepository() =
 
     member x.Delete id =
         selectRowWithId id |> deleteRowFromCar
-        db.DataContext.SubmitChanges
+        db.DataContext.SubmitChanges()
      
     member x.Create car =
         createNewCar car |> insertIntoCarTable
-        db.DataContext.SubmitChanges
+        db.DataContext.SubmitChanges()
         
     member x.Update car =
         updateCar car 
-        db.DataContext.SubmitChanges
+        db.DataContext.SubmitChanges()
