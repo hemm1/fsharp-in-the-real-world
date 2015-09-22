@@ -3,7 +3,6 @@
 open System.Data
 open System.Data.Linq
 open Microsoft.FSharp.Data.TypeProviders
-open fsharpFTW.Models
 
 type CurrencyRepository() =
     
