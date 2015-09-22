@@ -1,5 +1,12 @@
 # fsharp-in-the-real-world
 
+#Del1
+1a) Lag en ny F# Console Application i Visual Studio. Lag en ny type, Car, i en egen fil med feltene, Id, Make, Model og Color.
+    Instiansier denne i Main-metoden og print ut Make og Color (printf). Bruk gjerne Console.ReadLine() (ligger i System)  slik     at du får sett hva     som skrives ut før vinduet lukkes.
+
+
+#Del 2
+
 Et enkelt WebApi-prosjekt laget i forbindelse med en faggruppeworkshop i .NET-faggruppa.
 
 Før du begynner:
