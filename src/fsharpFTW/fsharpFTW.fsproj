@@ -132,7 +132,9 @@
     <Content Include="Data\CreateDatabase.sql" />
     <Content Include="Data\CreateTable.sql" />
     <Compile Include="Data\CarsRepository.fs" />
+    <Compile Include="Data\CurrencyRepository.fs" />
     <Compile Include="Controllers\CarsController.fs" />
+    <Compile Include="Controllers\CurrencyController.fs" />
     <Content Include="Web.config" />
     <Content Include="Global.asax" />
     <Compile Include="Global.asax.fs">
