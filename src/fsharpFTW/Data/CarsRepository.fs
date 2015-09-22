@@ -6,6 +6,7 @@ open Microsoft.FSharp.Data.TypeProviders
 open fsharpFTW.Models
 
 type SqlConnection = Microsoft.FSharp.Data.TypeProviders.SqlDataConnection<ConnectionString = @"Data Source=.;database=fsharpFTW;Integrated Security=True">
+type DbCar = SqlConnection.ServiceTypes.Car
 
 type CarsRepository() =
     let db = SqlConnection.GetDataContext()
@@ -28,12 +29,12 @@ type CarsRepository() =
         |> Seq.head
 
     let createNewCar car =  
-       new SqlConnection.ServiceTypes.Car(Make = car.Make, Model = car.Model)
+       new DbCar(Make = car.Make, Model = car.Model)
 
     let insertIntoCarTable car =
        db.Car.InsertOnSubmit car |> ignore
         
-    let updateCarTable (row: SqlConnection.ServiceTypes.Car) car =
+    let updateCarTable (row: DbCar) car =
         row.Make <- car.Make
         row.Model <- car.Model
 
