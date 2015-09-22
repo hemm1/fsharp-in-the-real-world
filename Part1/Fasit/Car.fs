@@ -2,10 +2,12 @@
 
 type Car = {
         Make : string
-        Model : string
+        Year : int
         Color : string
     }   
 
 
-let Repaint car color = 
-    {Make = car.Make; Model = car.Model; Color = color}
+let Repaint color car = 
+    {car with Color = color}
+
+let Print car = printfn "Make: %s  Year:%i  Color: %s" car.Make car.Year car.Color

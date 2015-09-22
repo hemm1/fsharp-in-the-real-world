@@ -2,21 +2,20 @@
 open Car
 open System
 
-let createCar make model color = {Make = make; Model = model; Color = color}
-
-let printCar car = printf "Make: %s  Model:%s  Color: %s \n" car.Make car.Model car.Color
+let createCar make year color = {Make = make; Year = year; Color = color}
 
 [<EntryPoint>]
 let main argv = 
 
-    let car = { Make = "Volvo"; Model = "V70"; Color = "Red"}
-    printCar car
+    let car = { Make = "Volvo"; Year = 1987; Color = "Red"}
+    Car.Print car
 
-    Car.Repaint car "Blue" |> printCar
+    Car.Repaint "Blue" car 
+        |> Car.Print
         
-    [ createCar "Mazda" "MX2" "Red"; createCar "Toyota" "Corolla" "Red"; createCar "Volvo" "240" "Yellow"] 
-        |> List.map (fun c -> Car.Repaint c "Blue")
-        |> List.iter (printCar)
+    [ createCar "Mazda" 1980 "Red"; createCar "Toyota" 2003 "Red"; createCar "Volvo" 2011 "Yellow"] 
+        |> List.map (Car.Repaint "Blue")
+        |> List.iter Car.Print
     
     let s = Console.ReadLine()    
     0
