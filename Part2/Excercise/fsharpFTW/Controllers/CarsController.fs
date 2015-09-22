@@ -13,8 +13,8 @@ type CarsController(repo : CarsRepository) =
 
     member x.Get() = repo.GetAll
 
-    member x.Delete id = repo.Delete id
+    //member x.Delete id = repo.Delete id
 
-    member x.Post (car:Car) = repo.Create car
+    //member x.Post (car:Car) = repo.Create car
 
-    member x.Put (car:Car) =  repo.Update car
+    //member x.Put (car:Car) =  repo.Update car
