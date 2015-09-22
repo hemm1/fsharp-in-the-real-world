@@ -27,20 +27,15 @@ type CarsRepository() =
     let insertIntoCarTable car =
        db.Car.InsertOnSubmit car |> ignore
         
-    
+    let setCarValues (row: SqlConnection.ServiceTypes.Car) (car:Car) =
+        row.Make <- car.Make
+        row.Model <- car.Model
+
     let updateCar car =
-        query { for row in db.Car do
-                where (row.Id = car.Id)
-                select row
-                } 
-                |> Seq.iter (fun row ->
-            row.Make <- car.Make
-            row.Model <- car.Model
-            )
-           
+        selectRowWithId car.Id
+            |> setCarValues <| car
            
     member x.GetAll() = 
-
         query 
             {
                 for car in db.Car do
