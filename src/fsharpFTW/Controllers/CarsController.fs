@@ -11,7 +11,7 @@ type CarsController(repo : CarsRepository) =
 
     new() = new CarsController(CarsRepository())
 
-    member x.Get() = repo.GetAll()
+    member x.Get() = repo.GetAll
 
     member x.Delete id = repo.Delete id
 

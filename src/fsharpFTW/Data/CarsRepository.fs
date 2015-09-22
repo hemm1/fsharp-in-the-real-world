@@ -10,16 +10,22 @@ type SqlConnection = Microsoft.FSharp.Data.TypeProviders.SqlDataConnection<Conne
 type CarsRepository() =
     let db = SqlConnection.GetDataContext()
 
+    let selectAllCars =
+        query {
+            for car in db.Car do
+            select car 
+        }
+
     let deleteRowFromCar row =
         db.Car.DeleteOnSubmit row
 
-    let selectRowWithId (id:int) = 
-                        query {
-                            for car in db.Car do
-                            where (car.Id = id)
-                            select car
-                        }
-                            |> Seq.head
+    let selectRowWithId id = 
+        query {
+            for car in db.Car do
+            where (car.Id = id)
+            select car
+        }
+        |> Seq.head
 
     let createNewCar car =  
        new SqlConnection.ServiceTypes.Car(Make = car.Make, Model = car.Model)
@@ -27,31 +33,24 @@ type CarsRepository() =
     let insertIntoCarTable car =
        db.Car.InsertOnSubmit car |> ignore
         
-    let setCarValues (row: SqlConnection.ServiceTypes.Car) (car:Car) =
+    let updateCarTable (row: SqlConnection.ServiceTypes.Car) car =
         row.Make <- car.Make
         row.Model <- car.Model
 
     let updateCar car =
-        selectRowWithId car.Id
-            |> setCarValues <| car
+        selectRowWithId car.Id |> updateCarTable <| car
            
-    member x.GetAll() = 
-        query 
-            {
-                for car in db.Car do
-                select car 
-            } 
-                |> Seq.toList
-                |> List.map (fun c -> {Id = c.Id; Make = c.Make; Model = c.Model})
+    member x.GetAll = 
+        selectAllCars |> Seq.toList |> List.map (fun c -> {Id = c.Id; Make = c.Make; Model = c.Model})
 
     member x.Delete id =
         selectRowWithId id |> deleteRowFromCar
-        db.DataContext.SubmitChanges()
+        db.DataContext.SubmitChanges
      
     member x.Create car =
         createNewCar car |> insertIntoCarTable
-        db.DataContext.SubmitChanges()
+        db.DataContext.SubmitChanges
         
     member x.Update car =
-        updateCar car       
-        db.DataContext.SubmitChanges()
+        updateCar car 
+        db.DataContext.SubmitChanges

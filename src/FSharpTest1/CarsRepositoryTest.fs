@@ -14,7 +14,7 @@ let repo = new CarsRepository();
 
 [<Test>]
 let ``Get all should return three cars``() =
-    let result = repo.GetAll()
+    let result = repo.GetAll
     result |> Seq.length |> should equal 6
 
 
