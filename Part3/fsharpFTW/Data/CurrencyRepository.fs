@@ -11,3 +11,5 @@ type CurrencyRepository() =
     member x.ConvertFromEuroToNok amount =
         let sample = CurrencyProvider.GetSample()
         amount * sample.Rates.Nok;
+    
+            

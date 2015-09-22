@@ -131,7 +131,10 @@
     <None Include="fonts\glyphicons-halflings-regular.ttf" />
     <None Include="fonts\glyphicons-halflings-regular.svg" />
     <None Include="fonts\glyphicons-halflings-regular.eot" />
+    <Compile Include="Models\Country.fs" />
+    <Compile Include="Data\CountryRepository.fs" />
     <Compile Include="Data\CurrencyRepository.fs" />
+    <Compile Include="Controllers\CountryController.fs" />
     <Compile Include="Controllers\CurrencyController.fs" />
     <Content Include="Web.config" />
     <Content Include="Global.asax" />

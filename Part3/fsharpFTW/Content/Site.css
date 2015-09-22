@@ -19,7 +19,7 @@
     box-shadow: none;
 }
 
-input, button {
+input, button, select {
     display: block;
     padding: 0.3em;
     font-size: 14pt;
@@ -34,3 +34,6 @@ input[type=submit] {
     padding: 0.5em;
 }
 
+p {
+    font-size: 14pt;
+}
