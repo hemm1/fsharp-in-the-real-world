@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "fsharpFTW", "fsharpFTW\fsharpFTW.fsproj", "{5A485704-3630-4AF6-B474-84DF53B56350}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Part2-Excercise", "fsharpFTW\Part2-Excercise.fsproj", "{5A485704-3630-4AF6-B474-84DF53B56350}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
