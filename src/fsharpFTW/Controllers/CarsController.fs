@@ -1,4 +1,4 @@
-namespace fsharpFTW.Controllers
+namespace fsharpFTW.Data
 open System
 open System.Collections.Generic
 open System.Linq

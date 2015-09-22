@@ -1,11 +1,11 @@
-﻿namespace fsharpFTW.Controllers
+﻿namespace fsharpFTW.Data
 
 open System.Data
 open System.Data.Linq
 open Microsoft.FSharp.Data.TypeProviders
 open fsharpFTW.Models
 
-type SqlConnection = Microsoft.FSharp.Data.TypeProviders.SqlDataConnection<ConnectionString = @"Data Source=.=fsharpFTW;Integrated Security=True">
+type SqlConnection = Microsoft.FSharp.Data.TypeProviders.SqlDataConnection<ConnectionString = @"Data Source=.;database=fsharpFTW;Integrated Security=True">
 
 type CarsRepository() =
     let db = SqlConnection.GetDataContext()

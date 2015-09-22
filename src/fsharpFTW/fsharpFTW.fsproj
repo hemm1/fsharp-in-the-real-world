@@ -123,14 +123,15 @@
     <Content Include="Scripts\npm.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\bootstrap.js" />
-    <Content Include="CreateDatabase.sql" />
-    <Content Include="CreateTable.sql" />
     <None Include="fonts\glyphicons-halflings-regular.woff" />
     <None Include="fonts\glyphicons-halflings-regular.ttf" />
     <None Include="fonts\glyphicons-halflings-regular.svg" />
     <None Include="fonts\glyphicons-halflings-regular.eot" />
     <Compile Include="Models\Car.fs" />
-    <Compile Include="CarsRepository.fs" />
+    <Content Include="Data\TestData.sql" />
+    <Content Include="Data\CreateDatabase.sql" />
+    <Content Include="Data\CreateTable.sql" />
+    <Compile Include="Data\CarsRepository.fs" />
     <Compile Include="Controllers\CarsController.fs" />
     <Content Include="Web.config" />
     <Content Include="Global.asax" />
@@ -140,7 +141,6 @@
     <Content Include="Index.html" />
     <Content Include="packages.config" />
     <Content Include="readme.txt" />
-    <Content Include="TestData.sql" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="FSharp.Data.TypeProviders" />

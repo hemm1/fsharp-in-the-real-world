@@ -2,7 +2,7 @@
 
 open FsUnit
 open NUnit.Framework
-open fsharpFTW.Controllers
+open fsharpFTW.Data
 open fsharpFTW.Models
 
 //open NUnitRunner
