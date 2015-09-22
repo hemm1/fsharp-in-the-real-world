@@ -18,3 +18,19 @@
     border-radius: 4px 4px 0 0;
     box-shadow: none;
 }
+
+input, button {
+    display: block;
+    padding: 0.3em;
+    font-size: 14pt;
+    margin-bottom: 0.5em;
+
+    }
+
+input[type=submit] {
+    background: cornflowerblue;
+    color: white;
+    border: 1px solid cadetblue;
+    padding: 0.5em;
+}
+
