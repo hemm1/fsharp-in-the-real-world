@@ -1,9 +1,10 @@
 ﻿var uri = 'api/currency';
 
 
-//TODO: Ajax ftw
-$(function() {
-    $.getJSON(uri)
-        .done(function (data) {
-        });
+$('form').on('submit', function (e) {
+    e.preventDefault();
+
+    $.get(uri, $('form').serialize(), function(data) {
+        $('#converted').html("NOK: " +  data);
+    });
 });

@@ -12,4 +12,4 @@ type CurrencyController(repo : CurrencyRepository) =
 
     [<HttpGet>]
     [<Route("api/currency")>]
-    member x.Convert (fromCurrency:string) (toCurrency:string) (amount:int) = repo.Convert fromCurrency toCurrency amount
+    member x.Convert (amount:decimal) = repo.ConvertFromEuroToNok amount
