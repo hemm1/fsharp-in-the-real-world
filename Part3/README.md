@@ -7,23 +7,24 @@ Oppgavene gjøres i løsningen i Exercise-mappa, der er denne pakken allerede in
 I denne oppgaven skal du benytte JSON-TypeProvidern til å konvertere valuta med en oppdatert kurs.
 
 Vi har allerede en et konverteringsskjema på forsiden, en `CurrencyController` og et `CurrencyRepository`.  
-Fullfør metoden i CurrencyRepository slik at den henter en oppdatert kurs fra endepunktet `"http://api.fixer.io/latest?base=EUR"` og konverterer fra Euro til NOK.
-Synktaks for JSON-TypeProvider: `type CurrencyProvider = JsonProvider<"http://api.fixer.io/latest?base=EUR">`.
+Fullfør metoden i `CurrencyRepository` slik at den henter en oppdatert kurs fra endepunktet `"http://api.fixer.io/latest?base=EUR"` og konverterer fra Euro til NOK.
+Synktaks for JSON-TypeProvider:   
+`type CurrencyProvider = JsonProvider<"http://api.fixer.io/latest?base=EUR">`.
 
 ## B
 I denne oppgaven skal du implementere et nytt REST-endepunkt som returnerer en liste av land med Name og Code (alpha2code).
 
-Implementer et CountryRepository som benytter seg av endepunktet "https://restcountries.eu/rest/v1/all" for å hente ut land og landkoder.
-Repositoriet skal tilby en metode som returnerer en liste med land. Benytt den allerede eksisterende type CountryCode som datastruktur.
+Implementer et CountryRepository som benytter seg av endepunktet `"https://restcountries.eu/rest/v1/all"` for å hente ut land og landkoder.
+Repositoriet skal tilby en metode som returnerer en liste med land. Benytt den allerede eksisterende typen `CountryCode` som datastruktur.
 
-Implementer en CountryController med en action som returnerer listen fra CountryRepository. 
-Routen må være [<Route("api/countries")>]. Du kan benytte den allerede eksisterende type CountryCode som datastruktur.
+Implementer en `CountryController` med en action som returnerer listen fra `CountryRepository`. 
+Routen må være `[<Route("api/countries")>]`.
 
 ## C
-Implementer en action på CountryController som tar inn en (countryCode: string) og returnerer land-informasjon. Routen må være "api/countries".
-Denne skal igjen kalle på CountryRepository, som benytter seg av JSON-TypeProvidern til å hente informasjon fra følgende endepunkt:
-"https://restcountries.eu/rest/v1/alpha?codes=<landkode>".
-Det kan være lurt å lage en Type som representerer et land(Country). Feltene som vises automatisk i skjermbildet er name, population og languages, men inkluder gjerne fler hvis du har lyst.
+Implementer en action på `CountryController` som tar inn en `(countryCode: string)` og returnerer land-informasjon. Routen må være `"api/countries"`.
+Denne skal igjen kalle på `CountryRepository`, som benytter seg av JSON-TypeProvidern til å hente informasjon fra følgende endepunkt:
+`"https://restcountries.eu/rest/v1/alpha?codes=<landkode>"`.
+Det kan være lurt å lage en Type som representerer et land(Country). Feltene som vises automatisk i skjermbildet er `name`, `population` og `languages`, men inkluder gjerne flere felter.
 
 ## BONUS
 
