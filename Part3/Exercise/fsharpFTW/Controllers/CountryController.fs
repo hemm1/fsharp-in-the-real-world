@@ -13,9 +13,3 @@ type CountryController(repo : CountryRepository) =
     [<HttpGet>]
     [<Route("api/countries")>]
     member x.Get () = repo.ListCountries
-
-    
-    [<HttpGet>]
-    [<Route("api/countries")>]
-    member x.Get (countryCode : string) = repo.GetCountry countryCode
-
