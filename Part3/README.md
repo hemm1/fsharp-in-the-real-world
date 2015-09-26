@@ -6,9 +6,9 @@ Oppgavene gjøres i løsningen i Exercise-mappa, der er denne pakken allerede in
 ## A
 I denne oppgaven skal du benytte JSON-TypeProvidern til å konvertere valuta med en oppdatert kurs.
 
-Vi har allerede en et konverteringsskjema på forsiden, en CurrencyController og et CurrencyRepository.  
-Fullfør metoden i CurrencyRepository slik at den henter en oppdatert kurs fra endepunktet "http://api.fixer.io/latest?base=EUR" og konverterer fra Euro til NOK.
-Synktaks for JSON-TypeProvider: type CurrencyProvider = JsonProvider<"http://api.fixer.io/latest?base=EUR">.
+Vi har allerede en et konverteringsskjema på forsiden, en `CurrencyController` og et `CurrencyRepository`.  
+Fullfør metoden i CurrencyRepository slik at den henter en oppdatert kurs fra endepunktet `"http://api.fixer.io/latest?base=EUR"` og konverterer fra Euro til NOK.
+Synktaks for JSON-TypeProvider: `type CurrencyProvider = JsonProvider<"http://api.fixer.io/latest?base=EUR">`.
 
 ## B
 I denne oppgaven skal du implementere et nytt REST-endepunkt som returnerer en liste av land med Name og Code (alpha2code).
