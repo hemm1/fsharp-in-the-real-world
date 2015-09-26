@@ -28,6 +28,6 @@ Det kan være lurt å lage en Type som representerer et land(Country). Feltene s
 
 ## BONUS
 
-Benytt dataen du allerede får fra restcountries og fixer til å utbedre valutakalkulatoren:  
-  * Gi brukeren en liste med valutaer man kan konvertere fra og til, som er hentet fra restcountries.  
+Benytt dataen du allerede får fra *restcountries* og *fixer* til å utbedre valutakalkulatoren:  
+  * Gi brukeren en liste med valutaer man kan konvertere fra og til, som er hentet fra *restcountries*.  
   * Endre kalkulatoren slik at den konverterer til og fra de oppgitte valutaene
