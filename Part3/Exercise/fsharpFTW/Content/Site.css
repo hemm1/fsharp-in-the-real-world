@@ -1,0 +1,39 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.sub-header {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #fff;
+    border-width: 1px;
+    border-color: #ddd;
+    border-radius: 4px 4px 0 0;
+    box-shadow: none;
+}
+
+input, button, select {
+    display: block;
+    padding: 0.3em;
+    font-size: 14pt;
+    margin-bottom: 0.5em;
+
+    }
+
+input[type=submit] {
+    background: cornflowerblue;
+    color: white;
+    border: 1px solid cadetblue;
+    padding: 0.5em;
+}
+
+p {
+    font-size: 14pt;
+}
