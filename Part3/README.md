@@ -15,7 +15,7 @@ Synktaks for JSON-TypeProvider:
 I denne oppgaven skal du implementere et nytt REST-endepunkt som returnerer en liste av land med navn og landkode.
 
 Implementer et CountryRepository som benytter seg av endepunktet `"https://restcountries.eu/rest/v1/all"` for å hente ut land og landkoder.
-Repositoriet skal tilby en metode som returnerer en liste med land. Benytt den allerede eksisterende typen `CountryCode` som datastruktur. Bruke *alpha2code* som landkode.
+Repositoriet skal tilby en metode som returnerer en liste med land. Benytt den allerede eksisterende typen `CountryCode` som datastruktur. Bruk *alpha2code* som landkode.
 
 Implementer en `CountryController` med en action som returnerer listen fra `CountryRepository`. 
 Routen må være `[<Route("api/countries")>]`.
