@@ -1,6 +1,6 @@
 # Part 3
 
-I denne delene skal vi se på JSON-TypeProvidern fra biblioteket FSharp.Data (https://www.nuget.org/packages/FSharp.Data/).
+I denne delen skal vi se på JSON-TypeProvidern fra biblioteket FSharp.Data (https://www.nuget.org/packages/FSharp.Data/).
 Oppgavene gjøres i løsningen i Exercise-mappa, der er denne pakken allerede inkludert.
 
 ## A
