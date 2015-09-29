@@ -9,7 +9,7 @@ Lag en metode Print på Car-modulen, som tar inn en bil og skrive ut alle felten
 
 1c) 
 Lag en metode Repaint på Car-modulen som tar inn en Car og en farge-streng, som returnerer en ny Car med tilsvarende Id, Make og Year, men fargen som ble sendt inn.
-Bruk den nye metoden i Main til å gi bilen en annen farge. Print ut fargen til den nye bilen for å verifisere at den er som forventet.
+Bruk den nye metoden i Main til å gi bilen en annen farge. Print ut fargen til den nye bilen for å verifisere at den er som forventet.  
   *Tips: List.map (fun x -> x) og List.iter (fun y -> y) kan være kjekke metoder å bruke
 
 1d)
