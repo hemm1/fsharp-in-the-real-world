@@ -12,4 +12,4 @@ Lag en metode Repaint på Car-modulen som tar inn en Car og en farge-streng, som
 Bruk den nye metoden i Main til å gi bilen en annen farge. Print ut fargen til den nye bilen for å verifisere at den er som forventet.  
 
 1d)
-Lag en liste med minst 3 biler i forskjellige farger. Bruk `list.Map(fun x -> x)` og Car.Repaint til å male om bilene, og print de ut.
+Lag en liste med minst 3 biler i forskjellige farger. Bruk `list.Map(fun x -> x)` og repaint-funksjonen til å male om bilene, og print de ut.
