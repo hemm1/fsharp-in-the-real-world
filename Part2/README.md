@@ -19,8 +19,6 @@ Implementer UPDATE-funksjonalitet i repoet.
 
 ## BONUS
 
-Refaktorer repoet til mange små funksjoner som kaller hverandre
-
-Bytt til å bruke SqlCommandProvider fremfor SqlDataConnection - http://fsprojects.github.io/FSharp.Data.SqlClient/
-
-Hjelp de som ikke er ferdige enda
+- Refaktorer repoet til mange små funksjoner som kaller hverandre
+- Bytt til å bruke SqlCommandProvider fremfor SqlDataConnection - http://fsprojects.github.io/FSharp.Data.SqlClient/
+- Hjelp de som ikke er ferdige enda
